@@ -15,7 +15,7 @@ var bot = new Bot({
 
 		if (msg.text == '/assembly') sendAssembly(msg);
 
-		if (msg.text == '/about@luchanso-bot') sendGitRepository(msg);
+		if (msg.text == '/about') sendGitRepository(msg);
 	}
 })
 .start();
