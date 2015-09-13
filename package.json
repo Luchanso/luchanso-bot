@@ -16,5 +16,14 @@
   "license": "MIT",
   "dependencies": {
     "node-telegram-bot": "git+https://github.com/depoio/node-telegram-bot.git"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luchanso/luchanso-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Luchanso/luchanso-bot/issues"
+  },
+  "homepage": "https://github.com/Luchanso/luchanso-bot#readme"
 }
