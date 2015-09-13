@@ -8,8 +8,7 @@ var bot = new Bot({
 .on('message', function (msg) {
 	console.log(msg);
 
-
-	if (msg.from.username == config.admin) {		
+	if (msg.from.username == config.admin) {
 		msg.text = msg.text.toLowerCase();
 		
 		if (msg.text == '/hi' ||
@@ -18,9 +17,15 @@ var bot = new Bot({
 			) sendHello(msg);
 
 		if (msg.text == '/assembly') sendAssembly(msg);
+
+		if (msg.text == '/about@luchanso-bot') sendGitRepository(msg);
 	}
 })
 .start();
+
+function sendGitRepository(msg) {
+	sendResponse(assembly.homepage, msg);
+}
 
 function sendHello(msg) {
 	sendResponse("Hello @" + msg.from.username, msg);
