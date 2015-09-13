@@ -11,10 +11,7 @@ var bot = new Bot({
 	if (msg.from.username == config.admin) {
 		msg.text = msg.text.toLowerCase();
 		
-		if (msg.text == '/hi' ||
-			msg.text == 'hello' ||
-			msg.text == 'hi'
-			) sendHello(msg);
+		if (msg.text == '/hi') sendHello(msg);
 
 		if (msg.text == '/assembly') sendAssembly(msg);
 
