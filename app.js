@@ -12,15 +12,26 @@ var bot = new Bot({
 	if (msg.from.username == config.admin) {		
 		msg.text = msg.text.toLowerCase();
 		
-		if (msg.text == '/hi') hello(msg);
-		if (msg.text == '/assembly') assembly(msg);
-		if (msg.text == 'hello') hello(msg);
+		if (msg.text == '/hi' ||
+			msg.text == 'hello' ||
+			msg.text == 'hi'
+			) sendHello(msg);
+
+		if (msg.text == '/assembly') sendAssembly(msg);
 	}
 })
 .start();
 
-function hello(msg) {	
-	bot.sendMessage({chat_id: msg.chat.id, text: "Hello @" + msg.from.username});
+function sendHello(msg) {
+	sendResponse("Hello @" + msg.from.username, msg);
+}
+
+function sendAssembly(msg) {
+	sendResponse(JSON.stringify(assembly), msg);
+}
+
+function sendResponse(text, msg) {
+	bot.sendMessage({chat_id: msg.chat.id, text: text});
 }
 
 console.log('Assembly: ' + assembly.version);
